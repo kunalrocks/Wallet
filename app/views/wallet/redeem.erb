@@ -1,0 +1,18 @@
+<div class = "Money add">
+    <h2>Money redeem page</h2>
+    <%= form_for(:redeem, :url => {:action => "update"}) do |f| %>
+        <table>
+          <tr>
+            <th>Enter the amount</th>
+            <td><%= f.text_field(:amount) %></td>
+          </tr>
+        </table>
+        <%= submit_tag("redeem money from the wallet") %>
+    <% end %>
+</div>
+
+<script>
+
+
+
+</script>

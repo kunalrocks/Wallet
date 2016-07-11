@@ -1,0 +1,20 @@
+<div class = "wallet information">
+  <h2> Welcome to wallet page </h2>
+  <% if user_signed_in? %>
+    <%= button_to("Create wallet", {:action => "create"}, :method => :post) %> <br>
+      <%= button_to("redeem money", {:action => "redeem"}, :method => :get) %> <br>
+      <% @a = Wallet.find_by(:user_id => current_user.id) %>
+      <% if @a %>
+      <table summary = "wallet details">
+        <tr>
+          <th>User Id</th>
+          <th>Email</th>
+          <th>Wallet balance</th>
+        </tr>
+        <td><%= @wallet.user.id %></td>
+        <td><%= @wallet.user.email %></td>
+        <td><%= @wallet.balance %></td>
+      </table>
+      <% end %>
+  <% end %>
+</div>
