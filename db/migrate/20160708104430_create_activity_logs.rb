@@ -6,7 +6,8 @@ class CreateActivityLogs < ActiveRecord::Migration[5.0]
       t.string "ip_address"
       t.string "controller"
       t.string "action"
-      t.string "params"
+      t.string "transaction_id"
+      t.string "amount"
       t.string "note"
       t.timestamps
     end

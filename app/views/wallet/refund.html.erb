@@ -1,0 +1,19 @@
+<div class = "refund money">
+  <h2>Money refund page</h2>
+  <%= form_for(:refund, :url => {:action => "get_refund"}) do |f| %>
+      <table>
+        <tr>
+          <th>Enter the amount</th>
+          <td><%= f.text_field(:amount) %></td>
+        </tr>
+        <tr>
+          <th>Enter the transaction Id</th>
+          <td><%= f.text_field(:txn_id) %></td>
+        </tr>
+      </table>
+      <%= submit_tag("redeem money from the wallet") %>
+  <% end %>
+
+
+
+</div>

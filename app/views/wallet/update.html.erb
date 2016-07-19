@@ -1,25 +1,35 @@
 <div class = "launch wallet">
 
+  <button onclick="launch()"> launch the wallet </button>
+
   <script>
-    var dataObj = {
-      amount: '#{params[:redeem][:amount]}',
-      currency: 'INR',
-      email: 'kunalkeshwani6@gmail.com',
-      mobile: '8756320983',
-      returnUrl: 'http://61b19c65.ngrok.io/payments/callback',
-      merchantAccessKey: 'VBR8O0HQICQK7CM03MIF',
-      merchantTransactionId: 'd2er34dfgkraf324343j',
-      notifyUrl: ''
 
-
-    }
-
+    function launch(){
+      var dataObj = {
+        amount: '<%= params[:redeem][:amount] %>',
+        currency: 'INR',
+        email: '<%= current_user.email %>',
+        mobile: '8756320983',
+        returnUrl: 'http://fb2b0ae1.ngrok.io/wallet/get_response',
+        notifyUrl: 'http://fb2b0ae1.ngrok.io/wallet/get_response',
+        merchantTransactionId: '<%= @transactionId %>',
+        merchantAccessKey: 'VBR8O0HQICQK7CM03MIF',
+        signature: '<%= @signature %>'
+      }
+      var confObj = {
+        walletUrl: 'https://betawallet.citruspay.com/wallet/showlogin'
+      }
+      console.log(dataObj)
+      citrusWallet.launchWallet(dataObj, confObj)
+  }
   </script>
 
 
-  notifyUrl: 'http://www.abc.com/notify-url',
 
 
-  signature: ‘d50a27680b6c05d045gfg3eb4acc1c4fa2fd42f’,
+
+
+
+
 
 </div>

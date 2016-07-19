@@ -31,6 +31,7 @@ gem 'rake'
 
 gem 'devise'
 
+gem 'httparty'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
